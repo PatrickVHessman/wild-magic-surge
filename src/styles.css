@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Source+Sans+Pro&display=swap");
+body {
+  background-image: url("phb-bg.8c8b6c09.jpg");
+  background-size: cover;
+}
+
+h2,
+h3 {
+  font-family: "Merriweather", serif;
+}
+
+.App {
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+}
+
+.mainBody {
+  position: relative;
+  /* padding-top: 15px; */
+  background-color: #fdf1dc;
+  border-style: solid;
+  border-width: 10px;
+  -webkit-border-image: url("border.png") 10;
+  border-image: url("border.png") 10;
+  text-align: left;
+  margin: 10px;
+  height: 75vh;
+  max-width: 1140px;
+  margin: 10px auto 0;
+}
+
+.pageNav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #58180d;
+  text-transform: uppercase;
+  transition: color 0.5s;
+}
+
+.pageNav a:hover {
+  color: #a63d26;
+}
+
+.raceBlock img {
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.mainBody h2 {
+  text-align: center;
+}
+
+.generatorItem {
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+
+.magicTable {
+  /* column-count: 2; */
+  overflow: auto;
+  height: 60vh;
+}
+
+.tableItem {
+  padding: 5px;
+}
+
+.tableItem:nth-last-child(even) {
+  background: #dde5c0;
+}
+
+.generatorTable {
+  overflow: auto;
+  height: 60vh;
+  font-size: 2rem;
+}
+
+.generateButton {
+  display: inherit;
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+  z-index: 10;
+  background: #58180d;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  transition: background 0.5s;
+}
+
+.generateButton:hover {
+  background: #a63d26;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #58180d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a63d26;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #58180d;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: #58180d;
+  width: 100%;
+  left: 0;
+  padding: 6px 10px 10px;
+  box-sizing: border-box;
+  z-index: 10;
+  color: #fff;
+  font-size: 10px;
+}
+
+.footer a {
+  color: #fff;
+}
+
+@media (max-height: 700px) {
+  .generatorTable,
+  .magicTable,
+  .mainBody {
+    height: auto;
+  }
+  .mainBody {
+    margin-bottom: 50px;
+  }
+}
