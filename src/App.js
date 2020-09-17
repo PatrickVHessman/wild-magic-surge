@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles.css";
+import { Route, Switch, Link } from "react-router-dom";
+import WildMagicTable from "./components/WildMagicTable";
+import Generator from "./components/Generator";
+import Footer from "./components/Footer";
 
-function App() {
+import wildMagic from "./data/wildMagic";
+
+export default function App() {
+  const wildMagicItems = wildMagic.wildMagic;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>D&D 5E Wild Magic Surge Generator</h1>
+      <div className="pageNav">
+        <Link to="/">Random Surge</Link> |{" "}
+        <Link to="/table">Wild Magic Surge List</Link>
+      </div>
+      <div className="mainBody">
+        <Switch>
+          <Route
+            path="/"
+            component={() => <Generator items={wildMagicItems} />}
+            exact
+          />
+          <Route
+            path="/table"
+            component={() => <WildMagicTable items={wildMagicItems} />}
+          />
+        </Switch>
+      </div>
+      <Footer />
     </div>
   );
 }
-
-export default App;
