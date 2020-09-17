@@ -132,12 +132,21 @@ footer {
 }
 
 @media (max-height: 700px) {
-  .generatorTable,
+  /* .generatorTable,
   .magicTable,
   .mainBody {
     height: auto;
-  }
+  } */
   .mainBody {
     margin-bottom: 50px;
   }
+}
+/* Animated Router */
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+  width: 100%;
 }

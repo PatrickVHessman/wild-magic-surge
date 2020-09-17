@@ -5,6 +5,8 @@ import WildMagicTable from "./components/WildMagicTable";
 import Generator from "./components/Generator";
 import Footer from "./components/Footer";
 
+import { AnimatedSwitch } from 'react-router-transition';
+
 import wildMagic from "./data/wildMagic";
 
 export default function App() {
@@ -19,7 +21,13 @@ export default function App() {
       </div>
       <div className="mainBody">
         <Switch>
-          <Route
+          <AnimatedSwitch
+      atEnter={{ opacity: 0 }}
+      atLeave={{ opacity: 0 }}
+      atActive={{ opacity: 1 }}
+      className="switch-wrapper"
+    >
+<Route
             path="/"
             component={() => <Generator items={wildMagicItems} />}
             exact
@@ -28,6 +36,9 @@ export default function App() {
             path="/table"
             component={() => <WildMagicTable items={wildMagicItems} />}
           />
+
+    </AnimatedSwitch>
+          
         </Switch>
       </div>
       <Footer />
